@@ -1,23 +1,40 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import React from 'react';
 import Icon from './Icon';
 
 const NavWrapper = styled.nav`
   line-height: 24px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.25);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+
   > ul {
-    display:flex;
-    > li{
+    display: flex;
+
+    > li {
       width: 33.3333%;
-      text-align:center;
+      text-align: center;
       display: flex;
       flex-direction: column;
       padding: 4px 0;
       justify-content: center;
       align-items: center;
+      >.active{
+        .icon{
+          fill: rgba(255,255,255, 0.5) !important;
+        }
+        background: rgba(0,0,0,0.25) !important;
+        color: white;
+        border-radius:5px;
+      }
+      > a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
       .icon {
-        width: 24px;      
+        width: 24px;
         height: 24px;
       }
     }
@@ -25,24 +42,30 @@ const NavWrapper = styled.nav`
 `;
 
 const Nav = () => {
-  return (
-    <NavWrapper>
-      <ul>
-        <li>
-          <Icon name="tag"/>
-          <Link to="/tags">标签页</Link>
-        </li>
-        <li>
-          <Icon name="money"/>
-          <Link to="/money">记账页</Link>
-        </li>
-        <li>
-          <Icon name="chart"/>
-          <Link to="/statistics">统计页</Link>
-        </li>
-      </ul>
-    </NavWrapper>
-  );
+    return (
+        <NavWrapper>
+            <ul>
+                <li>
+                    <NavLink activeClassName="active" to="/tags">
+                        <Icon name="tag"/>
+                        <span>标签页</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to="/money">
+                        <Icon name="money"/>
+                        <span>记账页</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to="/statistics">
+                        <Icon name="chart"/>
+                        <span>统计页</span>
+                    </NavLink>
+                </li>
+            </ul>
+        </NavWrapper>
+    );
 };
 
 export default Nav;

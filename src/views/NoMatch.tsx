@@ -2,7 +2,7 @@ import React from 'react';
 
 function NoMatch() {
   return (
-    <div>页面不存在，你丫输错地址了吧！</div>
+    <div>你输入的是什么网址啊，没有哦</div>
   );
 }
 

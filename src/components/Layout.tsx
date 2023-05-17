@@ -11,6 +11,7 @@ const Main = styled.div`
   flex-grow: 1;
   overflow: auto;
 `;
+// 用来布局的组件，从父组件塞入的组件参数撑开页面
 const Layout = (props: any) => {
   return (
     <Wrapper>
@@ -21,5 +22,4 @@ const Layout = (props: any) => {
     </Wrapper>
   );
 };
-
 export default Layout;
