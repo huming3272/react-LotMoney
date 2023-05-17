@@ -57,11 +57,59 @@ const CategorySection = styled.section`
     }
   }
 `
-const NumberPadSection = styled.section``
+const NumberPadSection = styled.section`
+  display:flex;
+  flex-direction: column;
+  > .output{
+    background:white;
+    font-size: 36px;
+    line-height: 72px;
+    text-align:right;
+    padding: 0 16px;
+    box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.25),
+    inset 0 5px 5px -5px rgba(0,0,0,0.25);
+  }
+  > .pad{
+    > button{
+      font-size: 18px; float: left; width: 25%; height: 64px; border: none;
+      &.ok{ height: 128px; float: right; }
+      &.zero{ width: 50%; }
+      &:nth-child(1){
+        background:#f2f2f2;
+      }
+      &:nth-child(2),
+      &:nth-child(5) {
+        background:#E0E0E0;
+      }
+      &:nth-child(3),
+      &:nth-child(6),
+      &:nth-child(9) {
+        background:#D3D3D3;
+      }
+      &:nth-child(4),
+      &:nth-child(7),
+      &:nth-child(10) {
+        background:#C1C1C1;
+      }
+      &:nth-child(8),
+      &:nth-child(11),
+      &:nth-child(13) {
+        background:#B8B8B8;
+      }
+      &:nth-child(12) {
+        background:#9A9A9A;
+      }
+      &:nth-child(14) {
+        background:#A9A9A9;
+      }
+    }
+  }
+`
 
 function Money() {
   return (
     <Layout>
+        {/*标签块*/}
         <TagsSection>
             <ol>
                 <li>衣</li>
@@ -71,20 +119,23 @@ function Money() {
             </ol>
             <button>新增标签</button>
         </TagsSection>
+        {/*备注块*/}
         <NotesSection>
             <label>
                 <span>备注</span>
                 <input type="text" placeholder="在这里添加备注"/>
             </label>
         </NotesSection>
+        {/*收入支出选项卡*/}
         <CategorySection>
             <ul>
                 <li className="selected">支出</li>
                 <li>收入</li>
             </ul>
         </CategorySection>
+        {/*键盘块*/}
         <NumberPadSection>
-            <div>
+            <div className="output">
                 100
             </div>
             <div>
@@ -99,9 +150,9 @@ function Money() {
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
-                <button>OK</button>
-                <button>0</button>
-                <button>.</button>
+                <button className="ok">OK</button>
+                <button className="zero">0</button>
+                <button className="dot">.</button>
             </div>
         </NumberPadSection>
     </Layout>
