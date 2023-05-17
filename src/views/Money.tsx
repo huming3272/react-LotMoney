@@ -144,7 +144,7 @@ function Money() {
             <div className="output">
                 100
             </div>
-            <div>
+            <div className="pad clearfix">
                 <button>1</button>
                 <button>2</button>
                 <button>3</button>
