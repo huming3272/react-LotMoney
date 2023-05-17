@@ -54,13 +54,13 @@ const Nav = () => {
                 <li>
                     <NavLink activeClassName="active" to="/money">
                         <Icon name="money"/>
-                        <span>记账页</span>
+                        <span>记点啥</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink activeClassName="active" to="/statistics">
                         <Icon name="chart"/>
-                        <span>统计页</span>
+                        <span>分析</span>
                     </NavLink>
                 </li>
             </ul>
