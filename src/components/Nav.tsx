@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import React from 'react';
 import Icon from './Icon';
 
@@ -18,19 +18,19 @@ const NavWrapper = styled.nav`
       padding: 4px 0;
       justify-content: center;
       align-items: center;
-      >.active{
-        .icon{
-          fill: rgba(255,255,255, 0.5) !important;
-        }
-        background: rgba(0,0,0,0.25) !important;
-        color: white;
-        border-radius:5px;
-      }
+      
       > a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+        &.active{
+          .icon{
+            fill: rgba(255,255,255, 0.5) !important;
+          }
+          background: rgba(0,0,0,0.25) !important;
+          color: white;
+          border-radius:5px;
+        }
       }
 
       .icon {
