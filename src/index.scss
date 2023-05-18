@@ -1,6 +1,6 @@
 @import-normalize ;
 @import "helper";
-* {margin: 0;padding: 0;}
+* {margin: 0;padding: 0;user-select:none;}
 * {box-sizing: border-box;}
 *::before {box-sizing: border-box;}
 *::after {box-sizing: border-box;}

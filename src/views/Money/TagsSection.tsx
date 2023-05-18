@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import React from "react";
 
-const TagsSection = styled.section`
+const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
   flex-grow: 1; display:flex; flex-direction: column;
   justify-content: flex-end; align-items: flex-start;
@@ -9,7 +10,6 @@ const TagsSection = styled.section`
       background: #D9D9D9; border-radius: 18px;
       display:inline-block; padding: 3px 18px;
       font-size: 14px; margin: 8px 12px;
-      user-select:none;
     }
   }
   > button{
@@ -18,4 +18,18 @@ const TagsSection = styled.section`
     margin-top: 8px;
   }
 `
+// 强化typescript的使用,给定义的函数施加类型限制,用React的函数组件类型
+const TagsSection: React.FunctionComponent = ()=>{
+    return (
+        <Wrapper>
+            <ol>
+                <li>衣</li>
+                <li>食</li>
+                <li>住</li>
+                <li>行</li>
+            </ol>
+            <button>新增标签</button>
+        </Wrapper>
+    )
+}
 export {TagsSection}
