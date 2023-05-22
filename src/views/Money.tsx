@@ -13,6 +13,9 @@ const MyLayout = styled(Layout)`
   flex-direction: column;
 `
 function Money() {
+    const triggerOk = ()=>{
+        console.log('ok')
+    }
   return (
     <MyLayout>
         {/*标签块*/}
@@ -44,7 +47,7 @@ function Money() {
                 <button>7</button>
                 <button>8</button>
                 <button>9</button>
-                <button className="ok">OK</button>
+                <button className="ok" onClick={triggerOk}>OK</button>
                 <button className="zero">0</button>
                 <button className="dot">.</button>
             </div>

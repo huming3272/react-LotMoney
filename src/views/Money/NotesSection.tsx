@@ -26,13 +26,16 @@ const Wrapper = styled.section`
 const NotesSection:FunctionComponent = () => {
     const [note,setNote] = React.useState('')
     // 增加类型名为React的事件改变HTML元素
-
-    const change = (e: React.ChangeEvent<HTMLInputElement>)=>{
-        e.persist();
-        setNote(()=>{
-            console.log(e.currentTarget.value)
-            return e.currentTarget.value
-        })
+    const refInput = React.useRef<HTMLInputElement>(null);
+    const blur = ()=>{
+        if(refInput.current !== null){
+            setNote(
+                refInput.current.value
+            )
+        }
+        setTimeout(()=>{
+            console.log(note)
+        },2000)
     }
     return (
         <Wrapper>
@@ -41,7 +44,7 @@ const NotesSection:FunctionComponent = () => {
                 {/* 受控组件写法value={note} onChange={(e)=>{
                 change(e)*/}
                 {/*类似vue input的v-model.lazy指令*/}
-                <input type="text" placeholder="在这里添加备注" defaultValue={note} onBlur={(e)=>{change(e)}}/>
+                <input type="text" ref={refInput} placeholder="在这里添加备注" defaultValue={note} onBlur={(e)=>{blur()}}/>
             </label>
         </Wrapper>
     )
