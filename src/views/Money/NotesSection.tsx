@@ -33,9 +33,6 @@ const NotesSection:FunctionComponent = () => {
                 refInput.current.value
             )
         }
-        setTimeout(()=>{
-            console.log(note)
-        },2000)
     }
     return (
         <Wrapper>

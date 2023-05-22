@@ -24,12 +24,7 @@ function Money() {
         {/*备注块*/}
         <NotesSection/>
         {/*收入支出选项卡*/}
-        <CategorySection>
-            <ul>
-                <li className="selected">支出</li>
-                <li>收入</li>
-            </ul>
-        </CategorySection>
+        <CategorySection/>
         {/*键盘块*/}
         <NumberPadSection>
             <div className="output">
