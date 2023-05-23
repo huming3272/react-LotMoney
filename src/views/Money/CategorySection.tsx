@@ -47,8 +47,6 @@ const CategorySection = ()=>{
                         </li>
                     )
                     })}
-                {/*<li className={category==='-' ? 'selected':''} onClick={()=>{toggleCategory('-')}}>支出</li>*/}
-                {/*<li className={category==='+' ? 'selected':''} onClick={()=>{toggleCategory('+')}}>收入</li>*/}
             </ul>
         </Wrapper>
     )
