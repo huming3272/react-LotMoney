@@ -1,22 +1,27 @@
-import React, {useState} from "react";
+import React from "react";
 import {Wrapper} from './NumberPadSection/Wrapper'
 import {generateOutput} from './NumberPadSection/generateOutput'
 
-const NumberPadSection: React.FunctionComponent = () => {
+type Props = {
+    value: number,
+    onChange: (amount: number)=> void;
+    // 可以为空的onOk
+    onOk?:() =>void;
+}
 
-    const [output, setOutput] = useState('0')
+const NumberPadSection: React.FunctionComponent<Props> = (props) => {
+
+    // const [output, setOutput] = useState('0')
+    const output = props.value
     // 给默认事件定义类型为React的鼠标事件
-
     const onClickButtonWrapper = (e: React.MouseEvent) => {
         // as在typescript是强制指定类型的意思
         const currentButton = (e.target as HTMLButtonElement).textContent as string
 
         if('.0123456789删除清空'.indexOf(currentButton)>-1){
-            setOutput(()=>{
-                const result = generateOutput(currentButton, output)
-                // console.log(result)
-                return result
-            })
+            const amount = generateOutput(currentButton, output)
+            // console.log(result)
+            props.onChange(amount)
         }else if (currentButton === 'OK'){
 
         }

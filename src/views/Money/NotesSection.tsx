@@ -23,13 +23,19 @@ const Wrapper = styled.section`
       border: none;
     }
   }`
-const NotesSection:FunctionComponent = () => {
-    const [note,setNote] = React.useState('')
+type Props = {
+    value: string,
+    onChange: (note: string)=> void
+}
+// 这里的<Props>是参数
+const NotesSection:FunctionComponent<Props> = (props) => {
+    // const [note,setNote] = React.useState('')
     // 增加类型名为React的事件改变HTML元素
+    const note = props.value
     const refInput = React.useRef<HTMLInputElement>(null);
     const blur = ()=>{
         if(refInput.current !== null){
-            setNote(
+            props.onChange(
                 refInput.current.value
             )
         }

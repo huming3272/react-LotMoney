@@ -24,7 +24,12 @@ const Wrapper = styled.section`
     }
   }
 `
-const CategorySection = ()=>{
+// 定义类型
+type Props = {
+    value: '-' | '+',
+    onChange: (value:'-'|'+') => void
+}
+const CategorySection:React.FunctionComponent<Props> = (props)=>{
     // 为表驱动做准备
     const categoryMap = {'-':'支出','+':'收入'}
     // 定义一个叫做category的类型，是按照categoryMap来的
@@ -32,15 +37,15 @@ const CategorySection = ()=>{
     // 定义一个叫做keys的变量，获取category的键，保存为联合类型
     type keys = keyof category
     const [categoryList] = React.useState<keys[]>(['-','+'])
-    const [category,setCategory] = React.useState('-')
-
+    // const [category,setCategory] = React.useState('-')
+    const category = props.value
     return(
         <Wrapper>
             <ul>
                 {categoryList.map((cate)=>{
                     return (
                         <li className={category===cate ? 'selected':''} onClick={()=>{
-                            setCategory(cate)
+                            props.onChange(cate)
                         }} key={cate}>{
                             categoryMap[cate]
                         }

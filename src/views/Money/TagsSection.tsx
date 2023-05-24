@@ -35,11 +35,17 @@ const Wrapper = styled.section`
     margin-top: 8px;
   }
 `
+// 定义Props类型,其中onChange是参数为字符串数组和返回值空
+type Props = {
+    value: string[];
+    onChange: (selected: string[]) => void;
+}
 // 强化typescript的使用,给定义的函数施加类型限制,用React的函数组件类型
-const TagsSection: React.FunctionComponent = () => {
+const TagsSection: React.FunctionComponent<Props> = (props) => {
     // 定义类型为字符串组成的数组
     const [tags, setTags] = React.useState<string[]>(['穿', '吃', '房', '交通'])
-    const [selectedTags, setSelectedTags] = React.useState<string[]>([])
+    // const [selectedTags, setSelectedTags] = React.useState<string[]>([])
+    const selectedTags = props.value;
     const onAddTag = () => {
         const tagName = window.prompt('您要新增的标签为')
         console.log(tagName)
@@ -52,12 +58,13 @@ const TagsSection: React.FunctionComponent = () => {
     }
     // 选中标签
     const onToggleTag = (tag: string) => {
-            setSelectedTags(()=>{
-                return [tag]
-            })
+            // 通过调用父组件的函数来修改值
+            props.onChange(
+                [tag]
+            )
 
     }
-    // 切换按钮选中显示
+    // 切换按钮选中显示css
     const getClass = (tag:string)=>{
         return selectedTags.indexOf(tag) >= 0 ?'selected': ''
     }
