@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import {useTags} from '../../useTags'
+import {createId} from "../../lib/createId";
 
 const Wrapper = styled.section`
   background: #FFFFFF;
@@ -52,7 +53,7 @@ const TagsSection: React.FunctionComponent<Props> = (props) => {
             // 异步的方式更新数据，并刷新
             setTags(() => {
                 return [...tags, {
-                    id:Math.random(),
+                    id:createId(),
                     name:tagName
                 }]
             })
