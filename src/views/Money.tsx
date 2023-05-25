@@ -16,7 +16,7 @@ const MyLayout = styled(Layout)`
 type Category = '-' | '+'
 function Money() {
     const [selected, setSelected] = React.useState({
-        tags: [] as string[],
+        tagIds: [] as number[],
         note: '',
         category: '-' as Category,
         amount: 0
@@ -27,7 +27,7 @@ function Money() {
     }
   return (
     <MyLayout>
-        {selected.tags.join(',')}
+        {selected.tagIds.join(',')}
         <hr/>
         {selected.note}
         <hr/>
@@ -36,9 +36,9 @@ function Money() {
         {selected.amount}
         {/*标签块*/}
         <TagsSection
-            value={selected.tags}
-            onChange={(tags)=>{
-                    return onChange({tags})
+            value={selected.tagIds}
+            onChange={(tagIds)=>{
+                    return onChange({tagIds})
                 }}>
         </TagsSection>
         {/*备注块*/}
