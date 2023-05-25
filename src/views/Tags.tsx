@@ -51,7 +51,7 @@ function Tags() {
                 {tags.map(tag =>
                     <li key={tag.id}>
                         {/*路由跳转*/}
-                        <Link to={'/tags/'+ tag.name}>
+                        <Link to={'/tags/'+ tag.id}>
                             <span className="oneLine">{tag.name}</span>
                             <Icon name="right"/>
                         </Link>
