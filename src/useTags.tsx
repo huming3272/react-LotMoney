@@ -11,8 +11,8 @@ const defaultTags = [
 ]
 const useTags = ()=>{
     // 封装一个自定义 Hook
-    const [tags, setTags] = React.useState<{id:number,name:string}[]>
-    (defaultTags)
-    return {tags, setTags}
+    const [tags, setTags] = React.useState<{id:number,name:string}[]>(defaultTags)
+    const findTag = (id:number) => tags.filter((tag)=>{return tag.id === id})[0]
+    return {tags, setTags, findTag}
 }
 export {useTags}

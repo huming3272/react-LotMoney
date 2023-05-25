@@ -28,7 +28,7 @@ function App() {
             <Tags/>
           </Route>
           {/*表示匹配之后非斜杠的内容*/}
-          <Route exact path="/tags/:tag">
+          <Route exact path="/tags/:id">
             <Tag/>
           </Route>
           <Route exact path="/money">
