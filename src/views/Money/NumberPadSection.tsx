@@ -23,11 +23,7 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) => {
             // console.log(result)
             props.onChange(amount)
         }else if (currentButton === 'OK'){
-
         }
-
-
-
     }
     return (
         <Wrapper>

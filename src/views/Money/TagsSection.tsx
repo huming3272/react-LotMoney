@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import {useTags} from '../../useTags'
 
 const Wrapper = styled.section`
   background: #FFFFFF;
@@ -42,13 +43,11 @@ type Props = {
 }
 // 强化typescript的使用,给定义的函数施加类型限制,用React的函数组件类型
 const TagsSection: React.FunctionComponent<Props> = (props) => {
-    // 定义类型为字符串组成的数组
-    const [tags, setTags] = React.useState<string[]>(['穿', '吃', '房', '交通'])
+    const {tags, setTags} = useTags()
     // const [selectedTags, setSelectedTags] = React.useState<string[]>([])
     const selectedTags = props.value;
     const onAddTag = () => {
         const tagName = window.prompt('您要新增的标签为')
-        console.log(tagName)
         if (tagName != null) {
             // 异步的方式更新数据，并刷新
             setTags(() => {
