@@ -26,10 +26,10 @@ const InputWrapper = styled.div`
   margin-top: 8px;
 `;
 const Tag: React.FunctionComponent = (props) => {
-    const {findTag} = useTags();
-    // 可以以对象形式获取路由的参数
-    let {id} = useParams<Params>()
-    const tag = findTag(parseInt(id))
+    const {findTag,updateTag} = useTags();
+    // 可以以对象形式获取路由的参数,定义idString为useParams的id
+    let {id: idString} = useParams<Params>()
+    const tag = findTag(parseInt(idString))
     return (
         <Layout>
             <Topbar>
@@ -38,7 +38,13 @@ const Tag: React.FunctionComponent = (props) => {
                 <Icon/>
             </Topbar>
             <InputWrapper>
-                <Input label='标签名' type="text" placeholder="标签名"></Input>
+                <Input label='标签名' type="text" placeholder="标签名"
+                        value = {tag.name}
+                       // 监听change方法
+                       onChange={(e) => {
+                           updateTag(tag.id, {name:e.target.value})
+                       }}
+                ></Input>
             </InputWrapper>
             <Center>
                 <Space></Space>
