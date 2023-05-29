@@ -44,21 +44,12 @@ type Props = {
 }
 // 强化typescript的使用,给定义的函数施加类型限制,用React的函数组件类型
 const TagsSection: React.FunctionComponent<Props> = (props) => {
-    const {tags, setTags} = useTags()
+
+    const {tags, addTag} = useTags()
+
+    console.log('use tags')
     // const [selectedTags, setSelectedTags] = React.useState<string[]>([])
     const selectedTagIds = props.value;
-    const onAddTag = () => {
-        const tagName = window.prompt('您要新增的标签为')
-        if (tagName != null) {
-            // 异步的方式更新数据，并刷新
-            setTags(() => {
-                return [...tags, {
-                    id:createId(),
-                    name:tagName
-                }]
-            })
-        }
-    }
     // 选中标签
     const onToggleTag = (tagId: number) => {
             // 通过调用父组件的函数来修改值
@@ -86,7 +77,10 @@ const TagsSection: React.FunctionComponent<Props> = (props) => {
                     )
                 })}
             </ol>
-            <button onClick={onAddTag}>新增标签</button>
+            <button onClick={()=>{
+                console.log('2')
+                addTag()
+            }}>新增标签2</button>
         </Wrapper>
     )
 }

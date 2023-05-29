@@ -9,7 +9,7 @@ import {Center} from 'components/Center'
 import {Space} from 'components/Space'
 
 function Tags() {
-    const {tags} = useTags()
+    const {tags, addTag} = useTags()
     const TagList = styled.ol`
       font-size: 16px;
       background: white;
@@ -50,7 +50,7 @@ function Tags() {
                 <Space/>
                 <Space/>
                 <Space/>
-                <Button>新增标签</Button>
+                <Button onClick={addTag}>新增标签2</Button>
             </Center>
         </Layout>
     );
