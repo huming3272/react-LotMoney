@@ -7,6 +7,8 @@ import {NotesSection} from './Money/NotesSection'
 import {CategorySection} from './Money/CategorySection'
 import {NumberPadSection} from './Money/NumberPadSection'
 
+import {useRecords} from '../hooks/useRecords'
+
 // 把组件当标签塞入
 const MyLayout = styled(Layout)`
   display:flex;
@@ -14,26 +16,29 @@ const MyLayout = styled(Layout)`
 `
 //定义类型category 为 仅包含 -和+
 type Category = '-' | '+'
+// 定义默认值
+const defaultFormData = {
+    tagIds: [] as number[],
+    note: '',
+    category: '-' as Category,
+    amount: 0
+}
 function Money() {
-    const [selected, setSelected] = React.useState({
-        tagIds: [] as number[],
-        note: '',
-        category: '-' as Category,
-        amount: 0
-    })
+    const [selected, setSelected] = React.useState(defaultFormData)
+    const {records, addRecord} = useRecords()
     //Partial是代表类型中的一种
     const onChange = (obj: Partial<typeof selected>)=>{
         setSelected({...selected, ...obj})
     }
+    const submit = () =>{
+        addRecord(selected);
+        alert('保存成功');
+        setSelected(defaultFormData)
+    }
   return (
     <MyLayout>
-        {selected.tagIds.join(',')}
+        {JSON.stringify(selected)}
         <hr/>
-        {selected.note}
-        <hr/>
-        {selected.category}
-        <hr/>
-        {selected.amount}
         {/*标签块*/}
         <TagsSection
             value={selected.tagIds}
@@ -65,6 +70,8 @@ function Money() {
                     return onChange({amount})
                 }
             }
+            // 子组件触发ok事件
+            onOK = {submit}
         />
     </MyLayout>
   );

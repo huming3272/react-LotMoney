@@ -6,7 +6,7 @@ type Props = {
     value: number,
     onChange: (amount: number)=> void;
     // 可以为空的onOk
-    onOk?:() =>void;
+    onOK?:() =>void;
 }
 
 const NumberPadSection: React.FunctionComponent<Props> = (props) => {
@@ -23,6 +23,8 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) => {
             // console.log(result)
             props.onChange(amount)
         }else if (currentButton === 'OK'){
+        //    OK暂且功能为空
+            props.onOK?.()
         }
     }
     return (

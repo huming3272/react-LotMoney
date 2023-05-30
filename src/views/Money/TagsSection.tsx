@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import {useTags} from '../../useTags'
+import {useTags} from '../../hooks/useTags'
 import {createId} from "../../lib/createId";
 
 const Wrapper = styled.section`
@@ -78,9 +78,8 @@ const TagsSection: React.FunctionComponent<Props> = (props) => {
                 })}
             </ol>
             <button onClick={()=>{
-                console.log('2')
                 addTag()
-            }}>新增标签2</button>
+            }}>新增标签</button>
         </Wrapper>
     )
 }
