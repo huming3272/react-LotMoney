@@ -17,10 +17,8 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) => {
     const onClickButtonWrapper = (e: React.MouseEvent) => {
         // as在typescript是强制指定类型的意思
         const currentButton = (e.target as HTMLButtonElement).textContent as string
-
         if('.0123456789删除清空'.indexOf(currentButton)>-1){
             const amount = generateOutput(currentButton, output)
-            // console.log(result)
             props.onChange(amount)
         }else if (currentButton === 'OK'){
         //    OK暂且功能为空

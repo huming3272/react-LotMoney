@@ -23,12 +23,21 @@ export const useRecords = () => {
         window.localStorage.setItem('records', JSON.stringify(records))
     },[records])
     const addRecord = (newRecord: newRecordItem) => {
+        if(newRecord.amount <= 0){
+            alert('请输入金额')
+            return false
+        }
+        if(newRecord.tagIds.length === 0){
+            alert('请选择标签')
+            return false;
+        }
         // 转为国际时间格式的字符串
         const record = {...newRecord, createAt: (new Date()).toISOString()}
         // 把records和record合并，变成新的数组更新
         setRecords(()=>{
             return [...records, record]
         })
+        return true;
     }
     return {records, addRecord}
 }

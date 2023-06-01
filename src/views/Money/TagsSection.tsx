@@ -47,7 +47,6 @@ const TagsSection: React.FunctionComponent<Props> = (props) => {
 
     const {tags, addTag} = useTags()
 
-    console.log('use tags')
     // const [selectedTags, setSelectedTags] = React.useState<string[]>([])
     const selectedTagIds = props.value;
     // 选中标签

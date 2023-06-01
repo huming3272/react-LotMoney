@@ -54,7 +54,6 @@ const useTags = ()=>{
         }))
     }
     const addTag = () => {
-        console.log('hi')
         const tagName = window.prompt('新标签的名字为');
         if(tagName !== null && tagName !==''){
             setTags([...tags,{id:createId(),name:tagName}])

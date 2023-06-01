@@ -8,7 +8,6 @@ import styled from 'styled-components'
 import {Input} from '../components/Input'
 import {Center} from '../components/Center'
 import {Space} from '../components/Space'
-
 type Params = {
     id: string
 }

@@ -27,12 +27,10 @@ const generateOutput = (text: string, output=0)=>{
         'num': () => {
             // 如果是初值
             if (stringOutput === '0') {
-                console.log(text)
                 return (text)
             } else if (floatLimit && lengthLimit < 9) {
                 return(stringOutput + text)
             } else{
-
                 return (stringOutput)
             }
         },
@@ -45,10 +43,6 @@ const generateOutput = (text: string, output=0)=>{
         },
         '清空': () => {
             return('0')
-        },
-        'OK': () => {
-            console.log(stringOutput)
-            return stringOutput
         },
     }
     return numMap[key]()
