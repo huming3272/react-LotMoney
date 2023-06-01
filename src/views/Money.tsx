@@ -23,6 +23,9 @@ const defaultFormData = {
     category: '-' as Category,
     amount: 0
 }
+const CategoryWrapper = styled.div`
+      background: #c4c4c4;
+`;
 
 function Money() {
     const [selected, setSelected] = React.useState(defaultFormData)
@@ -55,15 +58,17 @@ function Money() {
                     return onChange({note})
                 }}
             />
-            {/*收入支出选项卡*/}
-            <CategorySection
-                value={selected.category}
-                onChange={
-                    (category) => {
-                        return onChange({category})
+            <CategoryWrapper>
+                {/*收入支出选项卡*/}
+                <CategorySection
+                    value={selected.category}
+                    onChange={
+                        (category) => {
+                            return onChange({category})
+                        }
                     }
-                }
-            />
+                />
+            </CategoryWrapper>
             {/*键盘块*/}
             <NumberPadSection
                 value={selected.amount}

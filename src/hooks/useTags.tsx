@@ -59,6 +59,11 @@ const useTags = ()=>{
             setTags([...tags,{id:createId(),name:tagName}])
         }
     }
-    return {tags, addTag,setTags, findTag, updateTag, findTagIndex,deleteTag};
+    const getName = (id: number) => {
+        // 找到符合id的数组子元素，但是id对应一般只有一个，所以取索引0
+        const tag = tags.filter((t)=>{return t.id ===id})[0];
+        return tag ? tag.name: '';
+    }
+    return {tags, getName, addTag,setTags, findTag, updateTag, findTagIndex,deleteTag};
 }
 export {useTags}
