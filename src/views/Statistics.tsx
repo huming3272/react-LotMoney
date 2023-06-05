@@ -39,7 +39,7 @@ function Statistics() {
     // {'2023-06-01': [item, item], '2023-05-31': [item, item], '2023-05-29': [item, item, item, item]}
     // 约束类型key为string,value为RecordItem的值
     const hash: {[K: string]: RecordItem[]} = {}
-    selectedRecords.map((r) => {
+    selectedRecords.forEach((r) => {
         const key = day(r.createAt).format('YYYY年MM月DD日')
         if(!(key in hash)){
             hash[key] = []
@@ -55,7 +55,7 @@ function Statistics() {
             return 0
         }
         )
-
+    console.dir(array)
   return (
     <Layout>
         <CategoryWrapper>
@@ -73,7 +73,7 @@ function Statistics() {
                             {date}
                         </Header>
                         <div>
-                            {records.map((r) => {
+                            {records.map((r,index) => {
                                 return <Item key={r.createAt}>
                                     <div className='tags oneLine'>
                                         {
@@ -99,25 +99,25 @@ function Statistics() {
                 )
             })
         }
-        <div>
-            {/*筛选一下*/}
-            {selectedRecords.map((r)=>{
-                return (
-                <Item key={r.createAt}>
-                    <div className="tags">
-                        <span>{getName(r.tagIds[0])}</span>
-                    </div>
-                    {r.note &&
-                    <div className="note">
-                        {r.note}
-                    </div>}
-                    <div className="amount">
-                        ￥{r.amount}
-                    </div>
-                </Item>
-                )
-            })}
-        </div>
+        {/*<div>*/}
+        {/*    /!*筛选一下*!/*/}
+        {/*    {selectedRecords.map((r)=>{*/}
+        {/*        return (*/}
+        {/*        <Item key={r.createAt}>*/}
+        {/*            <div className="tags">*/}
+        {/*                <span>{getName(r.tagIds[0])}</span>*/}
+        {/*            </div>*/}
+        {/*            {r.note &&*/}
+        {/*            <div className="note">*/}
+        {/*                {r.note}*/}
+        {/*            </div>}*/}
+        {/*            <div className="amount">*/}
+        {/*                ￥{r.amount}*/}
+        {/*            </div>*/}
+        {/*        </Item>*/}
+        {/*        )*/}
+        {/*    })}*/}
+        {/*</div>*/}
     </Layout>
   );
 }

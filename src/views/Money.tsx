@@ -29,7 +29,7 @@ const CategoryWrapper = styled.div`
 
 function Money() {
     const [selected, setSelected] = React.useState(defaultFormData)
-    const {records, addRecord} = useRecords()
+    const {addRecord} = useRecords()
     //Partial是代表类型中的一种
     const onChange = (obj: Partial<typeof selected>) => {
         setSelected({...selected, ...obj})
