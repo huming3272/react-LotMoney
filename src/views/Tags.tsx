@@ -16,16 +16,16 @@ function Tags() {
 
       > li {
         //#e5e5e7
-        &:hover{
-          background: #e0e0e0;
+        &:hover {
+          background: #e3f3fd;
         }
-        border-bottom: 1px solid #d5d5d9;
+
+        border-bottom: 1px solid #e9f0ff;
         line-height: 20px;
-        padding: 12px 16px 12px 0;
-        margin-left: 16px;
-        > a{
+        padding: 12px 16px 12px 16px;
+        > a {
           padding: 12px 16px 12px 0;
-          display:flex;
+          display: flex;
           justify-content: space-between;
           align-items: center;
         }

@@ -16,7 +16,7 @@ const Item = styled.div`
   font-size: 18px;
   line-height: 20px;
   padding: 10px 16px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid #e9f0ff;
   > .note{
     margin-right: auto;
     margin-left: 16px;
@@ -55,7 +55,6 @@ function Statistics() {
             return 0
         }
         )
-    console.dir(array)
   return (
     <Layout>
         <CategoryWrapper>
@@ -99,25 +98,6 @@ function Statistics() {
                 )
             })
         }
-        {/*<div>*/}
-        {/*    /!*筛选一下*!/*/}
-        {/*    {selectedRecords.map((r)=>{*/}
-        {/*        return (*/}
-        {/*        <Item key={r.createAt}>*/}
-        {/*            <div className="tags">*/}
-        {/*                <span>{getName(r.tagIds[0])}</span>*/}
-        {/*            </div>*/}
-        {/*            {r.note &&*/}
-        {/*            <div className="note">*/}
-        {/*                {r.note}*/}
-        {/*            </div>}*/}
-        {/*            <div className="amount">*/}
-        {/*                ￥{r.amount}*/}
-        {/*            </div>*/}
-        {/*        </Item>*/}
-        {/*        )*/}
-        {/*    })}*/}
-        {/*</div>*/}
     </Layout>
   );
 }

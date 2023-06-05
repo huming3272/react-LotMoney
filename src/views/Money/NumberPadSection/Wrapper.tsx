@@ -20,7 +20,7 @@ const Wrapper = styled.section`
       width: 25%;
       height: 64px;
       border: none;
-
+      background: #1d4b9b;
       &:hover {
         cursor: pointer
       }
@@ -35,38 +35,44 @@ const Wrapper = styled.section`
       }
 
       &:nth-child(1) {
-        background: #f2f2f2;
+        //background: #f2f2f2;
+        filter: brightness(290%);
       }
 
       &:nth-child(2),
       &:nth-child(5) {
-        background: #E0E0E0;
+        //background: #E0E0E0;
+        filter: brightness(240%);
       }
 
       &:nth-child(3),
       &:nth-child(6),
       &:nth-child(9) {
-        background: #D3D3D3;
+        //background: #D3D3D3;
+        filter: brightness(210%);
       }
 
       &:nth-child(4),
       &:nth-child(7),
       &:nth-child(10) {
-        background: #C1C1C1;
+        //background: #C1C1C1;
+        filter: brightness(180%);
       }
 
       &:nth-child(8),
       &:nth-child(11),
       &:nth-child(13) {
-        background: #B8B8B8;
+        //background: #B8B8B8;
+        filter: brightness(150%);
       }
-
+      // ok
       &:nth-child(12) {
-        background: #9A9A9A;
+        //background: #9A9A9A;
       }
-
+      // 点
       &:nth-child(14) {
-        background: #A9A9A9;
+        //background: #A9A9A9;
+        filter: brightness(130%);
       }
     }
   }

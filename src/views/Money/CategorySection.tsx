@@ -5,7 +5,7 @@ const Wrapper = styled.section`
   font-size: 24px;
   > ul{
     display:flex;
-    background:#c4c4c4;
+    background:#2b70e8;
     > li {
       width: 50%;
       text-align:center;
@@ -14,8 +14,8 @@ const Wrapper = styled.section`
       &.selected::after{
         content: '';
         display:block;
-        height: 3px;
-        background:#333;
+        height: 5px;
+        background:#1d4b9b;
         position:absolute;
         bottom:0;
         width: 100%;

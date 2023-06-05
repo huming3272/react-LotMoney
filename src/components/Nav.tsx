@@ -19,18 +19,20 @@ const NavWrapper = styled.nav`
       padding: 4px 0;
       justify-content: center;
       align-items: center;
-      
+
       > a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        &.active{
-          .icon{
-            fill: rgba(255,255,255, 0.5) !important;
+
+        &.active {
+          .icon {
+            fill: #3d9dff !important;
           }
-          background: rgba(0,0,0,0.25) !important;
-          color: white;
-          border-radius:5px;
+
+          background: #2263f3 !important;
+          color: #3487ff;
+          border-radius: 5px;
         }
       }
 
