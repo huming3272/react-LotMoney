@@ -21,8 +21,10 @@ const Wrapper = styled.section`
       height: 64px;
       border: none;
       background: #1d4b9b;
+
       &:hover {
-        cursor: pointer
+        cursor: pointer;
+        background: #566df8;
       }
 
       &.ok {
@@ -65,10 +67,12 @@ const Wrapper = styled.section`
         //background: #B8B8B8;
         filter: brightness(150%);
       }
+
       // ok
       &:nth-child(12) {
         //background: #9A9A9A;
       }
+
       // 点
       &:nth-child(14) {
         //background: #A9A9A9;
