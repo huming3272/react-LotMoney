@@ -13,15 +13,18 @@ const Wrapper = styled.section`
   > ol {
     margin: 0 -12px;
     height: calc(100vh - 570px);
-    overflow-y: scroll;
+    overflow: auto;
     > li {
       background: #8fdef6;
       border-radius: 18px;
       display: inline-block;
       padding: 3px 18px;
       font-size: 14px;
+      max-width: 100px;
       margin: 8px 12px;
-
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
       &.selected {
         background: #46b4ff;
       }
