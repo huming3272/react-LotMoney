@@ -10,10 +10,10 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-
   > ol {
     margin: 0 -12px;
-
+    height: calc(100vh - 570px);
+    overflow-y: scroll;
     > li {
       background: #8fdef6;
       border-radius: 18px;

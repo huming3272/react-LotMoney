@@ -43,7 +43,6 @@ function Money() {
     }
     return (
         <MyLayout>
-            <hr/>
             {/*标签块*/}
             <TagsSection
                 value={selected.tagIds}
