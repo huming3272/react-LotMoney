@@ -38,6 +38,7 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) => {
             const zeroPosition = result.splice(12,1)
             result.splice(12,0,`<button className="zero" style="width:50%">${zeroPosition}</button>`)
             result.push(`<button className="dot">.</button>`)
+            // 长度小于3的都用普通button标签
             result.forEach((ele,index,group) =>{
                 if(ele.length <3){
                     group[index] = `<button>${ele}</button>`
@@ -72,20 +73,6 @@ const NumberPadSection: React.FunctionComponent<Props> = (props) => {
             <div className="pad clearfix" dangerouslySetInnerHTML={{__html: padStr}} onClick={(e) => {
                 onClickButtonWrapper(e)
             }}>
-                {/*<button>1</button>*/}
-                {/*<button>2</button>*/}
-                {/*<button>3</button>*/}
-                {/*<button>删除</button>*/}
-                {/*<button>4</button>*/}
-                {/*<button>5</button>*/}
-                {/*<button>6</button>*/}
-                {/*<button>清空</button>*/}
-                {/*<button>7</button>*/}
-                {/*<button>8</button>*/}
-                {/*<button>9</button>*/}
-                {/*<button className="ok">OK</button>*/}
-                {/*<button className="zero">0</button>*/}
-                {/*<button className="dot">.</button>*/}
             </div>
         </Wrapper>
     )
