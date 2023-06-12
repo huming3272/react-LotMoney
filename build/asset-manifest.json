@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-LotMoney/static/css/main.1f5e526f.chunk.css",
-    "main.js": "/react-LotMoney/static/js/main.10c8d776.chunk.js",
-    "main.js.map": "/react-LotMoney/static/js/main.10c8d776.chunk.js.map",
-    "runtime-main.js": "/react-LotMoney/static/js/runtime-main.330ab151.js",
-    "runtime-main.js.map": "/react-LotMoney/static/js/runtime-main.330ab151.js.map",
-    "static/js/2.71ea9f82.chunk.js": "/react-LotMoney/static/js/2.71ea9f82.chunk.js",
-    "static/js/2.71ea9f82.chunk.js.map": "/react-LotMoney/static/js/2.71ea9f82.chunk.js.map",
-    "index.html": "/react-LotMoney/index.html",
-    "precache-manifest.a7e01c628816e2794454d220d618d9ca.js": "/react-LotMoney/precache-manifest.a7e01c628816e2794454d220d618d9ca.js",
-    "service-worker.js": "/react-LotMoney/service-worker.js",
-    "static/css/main.1f5e526f.chunk.css.map": "/react-LotMoney/static/css/main.1f5e526f.chunk.css.map",
-    "static/js/2.71ea9f82.chunk.js.LICENSE.txt": "/react-LotMoney/static/js/2.71ea9f82.chunk.js.LICENSE.txt"
+    "main.css": "/react-LotMoney/build/static/css/main.1f5e526f.chunk.css",
+    "main.js": "/react-LotMoney/build/static/js/main.10c8d776.chunk.js",
+    "main.js.map": "/react-LotMoney/build/static/js/main.10c8d776.chunk.js.map",
+    "runtime-main.js": "/react-LotMoney/build/static/js/runtime-main.2bddff75.js",
+    "runtime-main.js.map": "/react-LotMoney/build/static/js/runtime-main.2bddff75.js.map",
+    "static/js/2.105d5b50.chunk.js": "/react-LotMoney/build/static/js/2.105d5b50.chunk.js",
+    "static/js/2.105d5b50.chunk.js.map": "/react-LotMoney/build/static/js/2.105d5b50.chunk.js.map",
+    "index.html": "/react-LotMoney/build/index.html",
+    "precache-manifest.4ea727438efcce869dcd2046b9e97f12.js": "/react-LotMoney/build/precache-manifest.4ea727438efcce869dcd2046b9e97f12.js",
+    "service-worker.js": "/react-LotMoney/build/service-worker.js",
+    "static/css/main.1f5e526f.chunk.css.map": "/react-LotMoney/build/static/css/main.1f5e526f.chunk.css.map",
+    "static/js/2.105d5b50.chunk.js.LICENSE.txt": "/react-LotMoney/build/static/js/2.105d5b50.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.330ab151.js",
-    "static/js/2.71ea9f82.chunk.js",
+    "static/js/runtime-main.2bddff75.js",
+    "static/js/2.105d5b50.chunk.js",
     "static/css/main.1f5e526f.chunk.css",
     "static/js/main.10c8d776.chunk.js"
   ]

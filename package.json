@@ -2,7 +2,7 @@
   "name": "LotMoney",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://huming3272.github.io/react-LotMoney/",
+  "homepage": "https://huming3272.github.io/react-LotMoney/build",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
